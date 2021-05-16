@@ -35,19 +35,18 @@ window.onload = function(){
 
         //********test rotation master for two different objects******************/
 
-        for(var i = 0; i< 10;i++){
+        for(var i = 0; i< 36;i++){
            //set new point on the canvas
             var x = 0;
             var y = 0;
             var length = 100;
             var angle = 0;
             //filter the map of points
-            var p1=[153+i*21,248 + i*36];
             var p2=[800-length - i*21,800-length - i*36];
             
             //define new lines from those points
             
-            line_2 = new Line(p2,2*length  - i*4,2,angle +i*19, '#0000ff');
+            line_2 = new Line(p2,2*length  - i*4,1,angle +i*19, '#0000ff');
             
             //set external rotation center point        
             var centerPoint = [400,800];
