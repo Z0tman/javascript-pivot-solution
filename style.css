@@ -1,0 +1,23 @@
+*{
+    
+}
+
+h1{
+    position:relative;
+    left:50%;
+    text-align: center;
+}
+
+.template-list{
+    position:relative;
+    top:50px;
+    width:1000px;
+    height:1200px;
+}
+
+canvas{
+    position:absolute;
+    top:250px;
+    left:10%;
+    border: 1px solid blue;
+}
