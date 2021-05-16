@@ -30,12 +30,11 @@ window.onload = function(){
 
     function draw(){
          
-        
-        //Some tests before combining data for the fractal drawing...
-
-        //********test rotation master for two different objects******************/
-
-        for(var i = 0; i< 36;i++){
+        //********test rotation master for procedural line******************/
+        //think about commenting the whole section if willing to test the section below.
+        for(var i = 0;
+             i< 36; // value tweekable for tests purposes
+             i++){
            //set new point on the canvas
             var x = 0;
             var y = 0;
@@ -65,13 +64,14 @@ window.onload = function(){
         
         /*************************END TEST ROTATION MASTER********************/
         /*************************TEST FIBONACCI LINE OVER ROTATION******************/
+        //Should comment the whole section if willing to deal with the above section
+        //The pattern is still the same, but the reference location change each time copy.
+        //Should implement the FibonacciLine class with a method to implement a Macro pattern instead of the base pattern to simplify this part of the code.
         lines = [];
         for(var k = 0; k<360; k = k+3){
             fbLine = new FibonacciLine([400,400], 600, [50,50],0 + k);
               
             fbLine.rotatePattern([50,50],0 + k);
-
-            //fbLine.display();
 
             lines.push(new Line(fbLine.pA,fbLine.lA, wL, fbLine.angleA, c));     
             lines.push(new Line(fbLine.pB,fbLine.lB, wL, fbLine.angleB, c));
@@ -82,8 +82,6 @@ window.onload = function(){
             fbLine0 = new FibonacciLine([400,400], 600, [750,50],60 + k);
 
             fbLine0.rotatePattern([750,50],60 + k);
-
-            //fbLine0.display();
 
             lines.push(new Line(fbLine0.pA,fbLine0.lA, wL, fbLine0.angleA, c));     
             lines.push(new Line(fbLine0.pB,fbLine0.lB, wL, fbLine0.angleB, c));
@@ -96,8 +94,6 @@ window.onload = function(){
 
             fbLine1.rotatePattern([50,750],60 + k);
 
-            //fbLine0.display();
-
             lines.push(new Line(fbLine1.pA,fbLine1.lA, wL, fbLine1.angleA, c));     
             lines.push(new Line(fbLine1.pB,fbLine1.lB, wL, fbLine1.angleB, c));
             lines.push(new Line(fbLine1.pC,fbLine1.lC, wL, fbLine1.angleC, c));
@@ -109,8 +105,6 @@ window.onload = function(){
 
             fbLine2.rotatePattern([750,750],60 + k);
 
-            //fbLine0.display();
-
             lines.push(new Line(fbLine2.pA,fbLine2.lA, wL, fbLine2.angleA, c));     
             lines.push(new Line(fbLine2.pB,fbLine2.lB, wL, fbLine2.angleB, c));
             lines.push(new Line(fbLine2.pC,fbLine2.lC, wL, fbLine2.angleC, c));
@@ -121,8 +115,6 @@ window.onload = function(){
 
             fbLine3.rotatePattern([400,200],60 + k);
 
-            //fbLine0.display();
-
             lines.push(new Line(fbLine3.pA,fbLine3.lA, wL, fbLine3.angleA, c));     
             lines.push(new Line(fbLine3.pB,fbLine3.lB, wL, fbLine3.angleB, c));
             lines.push(new Line(fbLine3.pC,fbLine3.lC, wL, fbLine3.angleC, c));
@@ -132,8 +124,6 @@ window.onload = function(){
             fbLine4 = new FibonacciLine([400,400], 600, [400,600],60 + k);
 
             fbLine4.rotatePattern([400,600],60 + k);
-
-            //fbLine0.display();
 
             lines.push(new Line(fbLine4.pA,fbLine4.lA, wL, fbLine4.angleA, c));     
             lines.push(new Line(fbLine4.pB,fbLine4.lB, wL, fbLine4.angleB, c));
@@ -354,7 +344,5 @@ window.onload = function(){
         this.pE = [this.startX + this.length*((1/3) + (1/6) + (2/9)), this.startY + (this.length*Math.tan(24*Math.PI/180)/6) + (this.length*Math.tan(36*Math.PI/180)/9)];
         this.lE = (Math.sqrt(Math.pow(this.length - this.pE[0],2) + Math.pow(this.pA[1] - this.pE[1],2))) - 60;
         this.angleE = this.GAngle+ Math.atan(3*(this.lB*Math.sin(24*Math.PI/180) + this.lC*Math.sin(36*Math.PI/180))/this.length)*180/Math.PI+4;
-    }
-
-         
+    }     
 }
