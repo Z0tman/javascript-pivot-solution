@@ -66,10 +66,10 @@ window.onload = function(){
         /*************************END TEST ROTATION MASTER********************/
         /*************************TEST FIBONACCI LINE OVER ROTATION******************/
         lines = [];
-        for(var k = 90; k<180; k = k+3){
-            fbLine = new FibonacciLine([400,400], 300, [250,250],0 + k);
+        for(var k = 0; k<360; k = k+3){
+            fbLine = new FibonacciLine([400,400], 600, [50,50],0 + k);
               
-            fbLine.rotatePattern([250,250],0 + k);
+            fbLine.rotatePattern([50,50],0 + k);
 
             //fbLine.display();
 
@@ -79,9 +79,9 @@ window.onload = function(){
             lines.push(new Line(fbLine.pD,fbLine.lD, wL, fbLine.angleD, c));
             lines.push(new Line(fbLine.pE,fbLine.lE, wL, fbLine.angleE, c));
 
-            fbLine0 = new FibonacciLine([400,400], 300, [750,400],60 + k);
+            fbLine0 = new FibonacciLine([400,400], 600, [750,50],60 + k);
 
-            fbLine0.rotatePattern([750,400],60 + k);
+            fbLine0.rotatePattern([750,50],60 + k);
 
             //fbLine0.display();
 
@@ -92,17 +92,54 @@ window.onload = function(){
             lines.push(new Line(fbLine0.pE,fbLine0.lE, wL, fbLine0.angleE, c));
 
 
-            fbLine1 = new FibonacciLine([400,400], 300, [50,750],120 + k);
+            fbLine1 = new FibonacciLine([400,400], 600, [50,750],60 + k);
 
-            fbLine1.rotatePattern([50,750],120 + k);
+            fbLine1.rotatePattern([50,750],60 + k);
 
-            fbLine1.display();
+            //fbLine0.display();
 
             lines.push(new Line(fbLine1.pA,fbLine1.lA, wL, fbLine1.angleA, c));     
             lines.push(new Line(fbLine1.pB,fbLine1.lB, wL, fbLine1.angleB, c));
             lines.push(new Line(fbLine1.pC,fbLine1.lC, wL, fbLine1.angleC, c));
             lines.push(new Line(fbLine1.pD,fbLine1.lD, wL, fbLine1.angleD, c));
             lines.push(new Line(fbLine1.pE,fbLine1.lE, wL, fbLine1.angleE, c));
+            
+            
+            fbLine2 = new FibonacciLine([400,400], 600, [750,750],60 + k);
+
+            fbLine2.rotatePattern([750,750],60 + k);
+
+            //fbLine0.display();
+
+            lines.push(new Line(fbLine2.pA,fbLine2.lA, wL, fbLine2.angleA, c));     
+            lines.push(new Line(fbLine2.pB,fbLine2.lB, wL, fbLine2.angleB, c));
+            lines.push(new Line(fbLine2.pC,fbLine2.lC, wL, fbLine2.angleC, c));
+            lines.push(new Line(fbLine2.pD,fbLine2.lD, wL, fbLine2.angleD, c));
+            lines.push(new Line(fbLine2.pE,fbLine2.lE, wL, fbLine2.angleE, c));
+            
+            fbLine3 = new FibonacciLine([400,400], 600, [750,750],60 + k);
+
+            fbLine3.rotatePattern([400,200],60 + k);
+
+            //fbLine0.display();
+
+            lines.push(new Line(fbLine3.pA,fbLine3.lA, wL, fbLine3.angleA, c));     
+            lines.push(new Line(fbLine3.pB,fbLine3.lB, wL, fbLine3.angleB, c));
+            lines.push(new Line(fbLine3.pC,fbLine3.lC, wL, fbLine3.angleC, c));
+            lines.push(new Line(fbLine3.pD,fbLine3.lD, wL, fbLine3.angleD, c));
+            lines.push(new Line(fbLine3.pE,fbLine3.lE, wL, fbLine3.angleE, c));
+            
+            fbLine4 = new FibonacciLine([400,400], 600, [400,600],60 + k);
+
+            fbLine4.rotatePattern([400,600],60 + k);
+
+            //fbLine0.display();
+
+            lines.push(new Line(fbLine4.pA,fbLine4.lA, wL, fbLine4.angleA, c));     
+            lines.push(new Line(fbLine4.pB,fbLine4.lB, wL, fbLine4.angleB, c));
+            lines.push(new Line(fbLine4.pC,fbLine4.lC, wL, fbLine4.angleC, c));
+            lines.push(new Line(fbLine4.pD,fbLine4.lD, wL, fbLine4.angleD, c));
+            lines.push(new Line(fbLine4.pE,fbLine4.lE, wL, fbLine4.angleE, c));
             for(var i =0; i<lines.length; i++){
                 lines[i].setColor(ctx);
                 lines[i].render(ctx);
